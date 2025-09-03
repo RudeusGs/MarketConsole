@@ -34,7 +34,7 @@ The project is built to practice **advanced OOP concepts** (Encapsulation, Inher
 ---
 
 ## 🛠️ Tech Stack
-- **Language:** C# (.NET 6 or later)  
+- **Language:** C# (.NET 8)  
 - **Concepts:** Advanced OOP, SOLID principles  
 - **Design:** Abstract classes, Interfaces, Repository Pattern  
 - **Data Storage:** File I/O with `.txt` (extendable to `.json`)  
