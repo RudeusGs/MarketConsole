@@ -1,7 +1,7 @@
 ﻿namespace MarketMini.Entities
 {
-    public class Staff
+    public class ClothesProduct : Product
     {
-        
+
     }
 }

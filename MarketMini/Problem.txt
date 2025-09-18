@@ -1,0 +1,128 @@
+﻿🛒 ĐỀ TÀI DỰ ÁN:
+
+Xây dựng Hệ thống Quản lý Siêu thị Mini bằng C# Console
+
+🎯 Mục tiêu
+
+Phát triển một ứng dụng console mô phỏng hoạt động quản lý và mua sắm tại siêu thị mini.
+Ứng dụng phải hỗ trợ đăng nhập, đăng ký, phân quyền (Admin/User) và đầy đủ chức năng của một hệ thống bán hàng thực tế.
+
+👥 Người dùng & Phân quyền
+1. Admin (quản trị viên)
+
+Quản lý sản phẩm (CRUD đầy đủ, phân loại sản phẩm theo Food, Electronic, Clothes, v.v.)
+
+Quản lý khách hàng (CRUD, phân hạng thành viên)
+
+Quản lý nhân viên (Cashier, Manager, tính lương dựa trên role)
+
+Quản lý đơn hàng (theo dõi, xóa/sửa nếu cần, xuất báo cáo)
+
+Quản lý báo cáo thống kê:
+
+Doanh thu theo ngày/tháng
+
+Sản phẩm bán chạy nhất
+
+Khách hàng chi tiêu nhiều nhất
+
+Quản lý tài khoản người dùng (reset password, phân quyền user/admin)
+
+2. User (khách hàng)
+
+Đăng ký tài khoản / đăng nhập
+
+Xem danh sách sản phẩm
+
+Tìm kiếm sản phẩm theo tên, danh mục
+
+Thêm sản phẩm vào giỏ hàng
+
+Tạo đơn hàng (Order) → hệ thống tự động trừ kho
+
+Nhận hóa đơn (hiển thị console, lưu file .txt)
+
+Xem lịch sử mua hàng
+
+✨ Các chức năng chính
+1. Quản lý tài khoản & phân quyền
+
+Đăng ký / Đăng nhập (dữ liệu lưu trong file .txt)
+
+Admin có thể xem danh sách user, khóa/mở tài khoản
+
+User chỉ thấy tính năng mua hàng
+
+2. Quản lý sản phẩm
+
+Thêm, sửa, xóa, tìm kiếm sản phẩm
+
+Mỗi loại sản phẩm có thuộc tính riêng:
+
+FoodProduct → ExpiryDate
+
+ElectronicProduct → WarrantyPeriod
+
+ClothesProduct → Size, Color
+
+Số lượng tồn kho tự động giảm khi có order
+
+3. Quản lý khách hàng
+
+CRUD thông tin khách hàng
+
+Membership level (Normal, Silver, Gold, VIP)
+
+Hỗ trợ khuyến mãi/chiết khấu theo level
+
+4. Quản lý nhân viên
+
+2 loại nhân viên:
+
+Cashier → lương theo giờ
+
+Manager → lương cơ bản + bonus
+
+Tính lương bằng Polymorphism
+
+5. Quản lý đơn hàng (Order)
+
+Khách hàng mua → tạo Order
+
+Admin có thể xem danh sách Order
+
+Hóa đơn in ra console + lưu file
+
+6. Báo cáo & Thống kê
+
+Doanh thu theo thời gian
+
+Sản phẩm bán chạy nhất
+
+Khách hàng chi tiêu nhiều nhất
+
+Xuất báo cáo ra file .txt (có thể mở rộng JSON)
+
+🛠️ Công nghệ & Nguyên tắc
+
+Ngôn ngữ: C# (.NET 8)
+
+Nguyên lý: OOP nâng cao, SOLID, Interface, Abstract class, Polymorphism
+
+Thiết kế: Repository pattern (quản lý dữ liệu), tách class rõ ràng (Entities, Services, Interfaces)
+
+Lưu trữ dữ liệu: File .txt (có thể mở rộng sang .json)
+
+Công cụ: LINQ để lọc & thống kê
+
+🚀 Yêu cầu đầu ra
+
+Ứng dụng chạy trên console, giao diện menu thân thiện, dễ dùng
+
+Có hệ thống đăng nhập/đăng ký & phân quyền rõ ràng
+
+Các chức năng CRUD cho sản phẩm, khách hàng, nhân viên, đơn hàng
+
+Giỏ hàng & hóa đơn hoạt động thực tế (trừ kho, tính tổng tiền, in hóa đơn)
+
+Báo cáo thống kê hiển thị rõ ràng và có thể lưu file

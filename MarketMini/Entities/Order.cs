@@ -3,7 +3,6 @@
     public class Order
     {
         public int Id { get; set; }
-        public Customer customer { get; set; }
         public List<Product> products { get; set; }
         public int TotalPrice { get; set; }
         public DateTime dateTime { get; set; }

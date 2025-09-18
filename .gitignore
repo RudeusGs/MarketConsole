@@ -1,0 +1,27 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+
+# Visual Studio Code
+.vscode/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.dll
+*.exe
+
+# Logs
+*.log
+
+# Others
+*.tmp
+*.cache
+    
