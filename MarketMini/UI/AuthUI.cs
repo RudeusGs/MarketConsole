@@ -123,13 +123,10 @@ namespace MarketMini.UI
             Console.WriteLine("╚════════════════════════════════════╝");
             Console.ResetColor();
 
-            Console.Write("👤 Username: ");
-            string username = Console.ReadLine();
+            Console.Write("👤 Email: ");
+            string email = Console.ReadLine();
 
-            Console.Write("🔒 New Password: ");
-            string newPassword = GetHiddenInput();
-
-            accountService.ForgotPassword(username, newPassword);
+            accountService.ForgotPassword(email);
 
             Console.WriteLine("\n(Ấn phím bất kỳ để quay lại...)");
             Console.ReadKey();

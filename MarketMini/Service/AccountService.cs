@@ -33,9 +33,20 @@ namespace MarketMini.Service
 
         }
 
-        public void ForgotPassword(string username, string password)
+        public void ForgotPassword(string email)
         {
-            throw new NotImplementedException();
+            var accounts = LoadDataJson.Load<Account>(filePath);
+            var user = accounts.FirstOrDefault(x =>
+                x.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+            if (user == null)
+            {
+                Console.WriteLine("Không tìm thấy tài khoản với email này.");
+                return;
+            }
+            string newPassword = GenerateRandomPassword.randomPassword();
+            user.Password = newPassword;
+            LoadDataJson.Save(filePath, accounts);
+            Console.WriteLine($"Mật khẩu mới của bạn là: {newPassword}");
         }
 
         public void Login(string username, string password)
@@ -62,6 +73,11 @@ namespace MarketMini.Service
             if(accounts.Any(x => x.UserName == username))
             {
                 Console.WriteLine("Tên tài khoản này đã tồn tại vui lòng sử dụng tên tài khoản khác");
+                return;
+            }
+            if (accounts.Any(x => x.Email == email))
+            {
+                Console.WriteLine("Email này đã được sử dụng");
                 return;
             }
             var newAccount = new Account(username, password, 0, name, email)

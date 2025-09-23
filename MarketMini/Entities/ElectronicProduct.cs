@@ -1,4 +1,6 @@
-﻿namespace MarketMini.Entities
+﻿using MarketMini.Entities.Base;
+
+namespace MarketMini.Entities
 {
     public class ElectronicProduct : Product
     {
@@ -14,7 +16,16 @@
         }
         public override string ToString()
         {
-            return $"Id: {Id}, Ten san pham: {Name}, Gia: {Price}, So luong con lai: {Quantity}, Danh muc: {Category}, Thoi han bao hanh con lai: {WarrantyPeriod}";
+            return string.Format(
+                "Id: {0,-5} | Ten san pham: {1,-20} | Gia: {2,-10:C} | So luong: {3,-5} | Danh muc: {4,-15} | Bao hanh: {5,-5} thang",
+                Id,
+                Name,
+                Price,
+                Quantity,
+                Category,
+                WarrantyPeriod
+            );
         }
+
     }
 }
